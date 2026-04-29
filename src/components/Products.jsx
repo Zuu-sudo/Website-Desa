@@ -56,7 +56,7 @@ export default function Products() {
   const titleInView = useInView(titleRef, { once: true })
 
   return (
-    <section id="products" className="bg-[#181818] py-24 px-8 md:px-14">
+    <section id="products" className="bg-[#0A0A0A] py-24 px-8 md:px-14">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={titleRef}

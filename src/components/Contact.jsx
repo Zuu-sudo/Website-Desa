@@ -24,7 +24,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true })
 
   return (
-    <section id="contact" className="bg-[#181818]">
+    <section id="contact" className="bg-[#0A0A0A]">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left info panel */}
         <motion.div

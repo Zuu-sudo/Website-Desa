@@ -75,39 +75,40 @@ function Navbar() {
   }, [mobileOpen]);
   const navLinks = [["#about", "Tentang"], ["#products", "Produk"], ["#reviews", "Ulasan"]];
   return (
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "space-between", padding: scrolled ? "14px clamp(20px,4vw,40px)" : "20px clamp(20px,4vw,40px)", background: scrolled ? "rgba(24,24,24,0.97)" : "rgba(24,24,24,0.6)", backdropFilter: "blur(12px)", borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent", transition: "all 0.4s ease" }}>
-      <a href="#hero" style={{ fontFamily: "Georgia,serif", fontSize: "1.2rem", fontWeight: 900, color: "#C9A84C", textDecoration: "none", letterSpacing: "0.08em", zIndex: 101 }}>
-        KUREKSARI <span style={{ color: "#D4520A", fontStyle: "italic" }}>BLACKSMITH</span>
-      </a>
-      {mobile ? (
-        <>
+    <>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "space-between", padding: scrolled ? "14px clamp(20px,4vw,40px)" : "20px clamp(20px,4vw,40px)", background: scrolled ? "rgba(10,10,10,0.98)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent", transition: "all 0.4s ease" }}>
+        <a href="#hero" style={{ fontFamily: "Georgia,serif", fontSize: "1.2rem", fontWeight: 900, color: "#C9A84C", textDecoration: "none", letterSpacing: "0.08em", zIndex: 101 }}>
+          KUREKSARI <span style={{ color: "#D4520A", fontStyle: "italic" }}>BLACKSMITH</span>
+        </a>
+        {mobile ? (
           <button onClick={() => setMobileOpen(!mobileOpen)} style={{ background: "none", border: "none", cursor: "pointer", zIndex: 101, padding: 8, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: 22, height: 2, background: "#fff", marginBottom: 5, transition: "all 0.3s", transform: mobileOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
             <div style={{ width: 22, height: 2, background: "#fff", marginBottom: 5, transition: "all 0.3s", opacity: mobileOpen ? 0 : 1 }} />
             <div style={{ width: 22, height: 2, background: "#fff", transition: "all 0.3s", transform: mobileOpen ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
           </button>
-          {mobileOpen && (
-            <div style={{ position: "fixed", inset: 0, background: "rgba(24,24,24,0.98)", zIndex: 100, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 28 }}>
-              {navLinks.map(([href, label]) => (
-                <a key={href} href={href} onClick={() => setMobileOpen(false)} style={{ color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "1.1rem", letterSpacing: "0.12em", textTransform: "uppercase", transition: "color 0.2s" }}>{label}</a>
-              ))}
-              <a href="#contact" onClick={() => setMobileOpen(false)} style={{ background: "#D4520A", color: "#fff", padding: "12px 28px", textDecoration: "none", fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600, marginTop: 8 }}>Hubungi Kami</a>
-            </div>
-          )}
-        </>
-      ) : (
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+        ) : (
+          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+            {navLinks.map(([href, label]) => (
+              <a key={href} href={href} style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", transition: "color 0.2s" }}
+                onMouseEnter={e => e.target.style.color = "#fff"}
+                onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.6)"}>{label}</a>
+            ))}
+            <a href="#contact" style={{ background: "#D4520A", color: "#fff", padding: "8px 20px", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600, transition: "background 0.2s" }}
+              onMouseEnter={e => e.target.style.background = "#F06A1A"}
+              onMouseLeave={e => e.target.style.background = "#D4520A"}>Hubungi Kami</a>
+          </div>
+        )}
+      </nav>
+
+      {mobile && mobileOpen && (
+        <div style={{ position: "fixed", inset: 0, background: "#0A0A0A", zIndex: 99, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 28 }}>
           {navLinks.map(([href, label]) => (
-            <a key={href} href={href} style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", transition: "color 0.2s" }}
-              onMouseEnter={e => e.target.style.color = "#fff"}
-              onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.6)"}>{label}</a>
+            <a key={href} href={href} onClick={() => setMobileOpen(false)} style={{ color: "#fff", textDecoration: "none", fontSize: "1.4rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>{label}</a>
           ))}
-          <a href="#contact" style={{ background: "#D4520A", color: "#fff", padding: "8px 20px", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600, transition: "background 0.2s" }}
-            onMouseEnter={e => e.target.style.background = "#F06A1A"}
-            onMouseLeave={e => e.target.style.background = "#D4520A"}>Hubungi Kami</a>
+          <a href="#contact" onClick={() => setMobileOpen(false)} style={{ background: "#D4520A", color: "#fff", padding: "14px 36px", textDecoration: "none", fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 700, marginTop: 8 }}>Hubungi Kami</a>
         </div>
       )}
-    </nav>
+    </>
   );
 }
 
@@ -115,7 +116,7 @@ function Hero() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setTimeout(() => setMounted(true), 100); }, []);
   return (
-    <section id="hero" style={{ minHeight: "100vh", background: "#181818", position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
+    <section id="hero" style={{ minHeight: "100vh", background: "#0A0A0A", position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
       <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.018) 59px,rgba(255,255,255,0.018) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.018) 59px,rgba(255,255,255,0.018) 60px)" }} />
 
       <div className="hero-content" style={{ position: "relative", zIndex: 2, padding: "130px clamp(24px,5vw,60px) 80px", maxWidth: 900, margin: "0 auto", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -179,7 +180,7 @@ function Ticker() {
 function About() {
   const mobile = useIsMobile();
   return (
-    <section id="about" style={{ background: "#EAECEF", padding: mobile ? "60px 24px" : "90px clamp(24px,5vw,60px)" }}>
+    <section id="about" style={{ background: "#F3F4F6", padding: mobile ? "100px 24px" : "120px clamp(24px,5vw,60px)", overflow: "hidden" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr", gap: mobile ? 40 : 80, alignItems: "center" }}>
         <FadeUp>
           <div style={{ position: "relative" }}>
@@ -189,7 +190,7 @@ function About() {
                 onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.filter = "saturate(0.85)"; }} alt="Proses tempa besi" />
             </div>
             <div style={{ position: "absolute", bottom: -16, right: -16, width: "100%", height: "100%", border: "1px solid rgba(201,168,76,0.35)", borderRadius: 2, zIndex: -1, pointerEvents: "none" }} />
-            <div style={{ position: "absolute", bottom: -24, left: 28, background: "#181818", color: "#fff", padding: "18px 24px" }}>
+            <div style={{ position: "absolute", bottom: -24, left: 28, background: "#0A0A0A", color: "#fff", padding: "18px 24px" }}>
               <p style={{ fontFamily: "Georgia,serif", fontSize: "1.8rem", fontWeight: 900, color: "#C9A84C", lineHeight: 1 }}>Kureksari</p>
               <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", marginTop: 4 }}>Waru, Sidoarjo</p>
             </div>
@@ -200,23 +201,23 @@ function About() {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 16 }}>
             <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} /> Tentang Kami
           </div>
-          <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: "#181818" }}>
+          <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: "#0A0A0A" }}>
             Diwariskan<br /><span style={{ color: "#D4520A", fontStyle: "italic" }}>Lintas Generasi</span>
           </h2>
-          <p style={{ color: "#6b6b6b", fontSize: "0.97rem", lineHeight: 1.9, marginBottom: 16 }}>
+          <p style={{ color: "#4B5563", fontSize: "0.97rem", lineHeight: 1.9, marginBottom: 16 }}>
             Desa Kureksari di Sidoarjo dikenal sebagai salah satu sentra pande besi tertua di Jawa Timur. Para pengrajin di sini mewarisi ilmu tempa besi secara turun-temurun.
           </p>
-          <p style={{ color: "#6b6b6b", fontSize: "0.97rem", lineHeight: 1.9, marginBottom: 28 }}>
-            Setiap produk dibuat oleh para ahli yang profesional. Kami memastikan setiap detail diperhatikan, dari pemilihan bahan hingga hasil akhir yang kuat dan tahan lama.
+          <p style={{ color: "#4B5563", fontSize: "0.97rem", lineHeight: 1.9, marginBottom: 28 }}>
+            Kureksari Blacksmith menggabungkan teknik tradisional yang telah teruji waktu dengan standar kualitas modern untuk memenuhi kebutuhan industri dan rumah tangga.
           </p>
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10, marginBottom: 32 }}>
             {["Bahan baku pilihan, kontrol kualitas ketat", "Pengerjaan custom sesuai kebutuhan pelanggan", "Pengiriman ke seluruh wilayah Jawa Timur", "Harga kompetitif, langsung dari pengrajin", "Pelayanan responsif via WhatsApp"].map(item => (
-              <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: "0.88rem", color: "#2c2c2c" }}>
+              <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: "0.88rem", color: "#374151" }}>
                 <span style={{ color: "#D4520A", fontSize: "0.7rem" }}>✦</span>{item}
               </li>
             ))}
           </ul>
-          <a href="#contact" style={{ fontSize: "0.85rem", fontWeight: 600, color: "#D4520A", textDecoration: "none", borderBottom: "1px solid rgba(184,74,47,0.4)", paddingBottom: 2, transition: "border-color 0.2s" }}>Hubungi Kami Sekarang →</a>
+          <a href="#contact" style={{ fontSize: "0.85rem", fontWeight: 600, color: "#D4520A", textDecoration: "none", borderBottom: "1px solid rgba(212, 82, 10, 0.4)", paddingBottom: 2, transition: "border-color 0.2s" }}>Hubungi Kami Sekarang →</a>
         </FadeUp>
       </div>
     </section>
@@ -228,7 +229,7 @@ function Products() {
   const mobile = useIsMobile();
   const isSmall = useIsMobile(480);
   return (
-    <section id="products" style={{ background: "#181818", padding: mobile ? "60px 24px" : "90px clamp(24px,5vw,60px)" }}>
+    <section id="products" style={{ background: "#0A0A0A", padding: mobile ? "60px 24px" : "90px clamp(24px,5vw,60px)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <FadeUp>
           <div className="section-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 52, flexWrap: "wrap", gap: 20 }}>
@@ -304,7 +305,7 @@ function Reviews() {
   const inputStyle = { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", padding: "11px 16px", fontSize: "0.88rem", outline: "none", width: "100%", fontFamily: "inherit", transition: "border-color 0.2s", borderRadius: 0 };
 
   return (
-    <section id="reviews" style={{ background: "#EAECEF", padding: mobile ? "60px 24px" : "90px clamp(24px,5vw,60px)" }}>
+    <section id="reviews" style={{ background: "#F3F4F6", padding: mobile ? "100px 24px" : "120px clamp(24px,5vw,60px)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <FadeUp>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: mobile ? "flex-start" : "flex-end", marginBottom: mobile ? 36 : 52, flexWrap: "wrap", gap: 20 }}>
@@ -312,7 +313,7 @@ function Reviews() {
               <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 14 }}>
                 <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} /> Ulasan Pelanggan
               </div>
-              <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 900, lineHeight: 1.1, color: "#181818" }}>
+              <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 900, lineHeight: 1.1, color: "#0A0A0A" }}>
                 Kata <span style={{ color: "#D4520A", fontStyle: "italic" }}>Mereka</span>
               </h2>
             </div>
@@ -341,7 +342,7 @@ function Reviews() {
                   <div style={{ display: "flex", alignItems: "center", gap: 12, paddingTop: 12, borderTop: "1px solid rgba(0,0,0,0.05)" }}>
                     <div style={{ width: 38, height: 38, borderRadius: "50%", background: PALETTE[i % PALETTE.length], display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 700, fontSize: "0.85rem", flexShrink: 0 }}>{initials}</div>
                     <div>
-                      <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#181818", lineHeight: 1.3 }}>{censored}</p>
+                      <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#0A0A0A", lineHeight: 1.3 }}>{censored}</p>
                       <p style={{ fontSize: "0.72rem", color: "#6b6b6b", marginTop: 2 }}>
                         {r.city}
                       </p>
@@ -356,7 +357,7 @@ function Reviews() {
         {showCount < reviews.length && (
           <div style={{ textAlign: "center", marginBottom: 40 }}>
             <button onClick={() => setShowCount(prev => Math.min(prev + 6, reviews.length))}
-              style={{ background: "transparent", border: "1px solid rgba(184,74,47,0.4)", color: "#D4520A", padding: "12px 36px", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", transition: "all 0.2s", fontFamily: "inherit" }}
+              style={{ background: "transparent", border: "1px solid rgba(56, 189, 248, 0.4)", color: "#D4520A", padding: "12px 36px", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", transition: "all 0.2s", fontFamily: "inherit" }}
               onMouseEnter={e => { e.target.style.background = "#D4520A"; e.target.style.color = "#fff"; }}
               onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.color = "#D4520A"; }}>
               Lihat Lebih Banyak ({reviews.length - showCount} ulasan lagi)
@@ -365,7 +366,7 @@ function Reviews() {
         )}
 
         <FadeUp delay={0.2}>
-          <div className="review-form" style={{ background: "#181818", padding: "48px clamp(20px,4vw,52px)" }}>
+          <div className="review-form" style={{ background: "#0A0A0A", padding: "48px clamp(20px,4vw,52px)" }}>
             <h3 style={{ fontFamily: "Georgia,serif", fontSize: "2rem", color: "#fff", fontWeight: 900, marginBottom: 6 }}>Bagikan Pengalaman Anda</h3>
             <p style={{ color: "rgba(255,255,255,0.38)", fontSize: "0.85rem", marginBottom: 32 }}>Ulasan Anda membantu pengrajin kami dan pembeli lain.</p>
             <div style={{ display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr", gap: 14, marginBottom: 14 }}>
@@ -416,7 +417,7 @@ function Reviews() {
 function Contact() {
   const mobile = useIsMobile();
   return (
-    <section id="contact" style={{ background: "#181818", display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr" }}>
+    <section id="contact" style={{ background: "#0A0A0A", display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr" }}>
       <FadeUp>
         <div style={{ padding: mobile ? "48px 24px" : "90px clamp(24px,5vw,60px)", borderRight: mobile ? "none" : "1px solid rgba(255,255,255,0.05)" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(201,168,76,0.75)", fontWeight: 600, marginBottom: 16 }}>
@@ -512,7 +513,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <div style={{ fontFamily: "'Outfit',system-ui,sans-serif", background: "#F0F2F5", color: "#181818", overflowX: "hidden" }}>
+    <div style={{ fontFamily: "'Outfit',system-ui,sans-serif", background: "#F0F2F5", color: "#0A0A0A", overflowX: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -520,7 +521,7 @@ export default function App() {
         @keyframes floatSpark { 0%,100%{transform:translateY(0);opacity:.55} 50%{transform:translateY(-14px);opacity:1} }
         @keyframes bounceY { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.6)} }
         * { box-sizing:border-box; margin:0; padding:0; }
-        ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:#181818} ::-webkit-scrollbar-thumb{background:#D4520A;border-radius:2px}
+        ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:#0A0A0A} ::-webkit-scrollbar-thumb{background:#D4520A;border-radius:2px}
         html{scroll-behavior:smooth}
         img{max-width:100%;height:auto}
 

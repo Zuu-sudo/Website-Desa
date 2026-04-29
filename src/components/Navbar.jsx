@@ -25,12 +25,12 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-14 transition-all duration-500 ${scrolled
-            ? 'py-4 bg-[#181818]/96 backdrop-blur-md border-b border-white/5 shadow-xl'
+            ? 'py-4 bg-[#0F172A]/96 backdrop-blur-md border-b border-white/5 shadow-xl'
             : 'py-6 bg-transparent'
           }`}
       >
-        <a href="#" className="font-display text-xl font-bold text-[#C9A84C] tracking-widest">
-          KUREKSARI <span className="text-[#D4520A] italic">BLACKSMITH</span>
+        <a href="#" className="font-display text-xl font-bold text-[#94A3B8] tracking-widest">
+          KUREKSARI <span className="text-[#38BDF8] italic">BLACKSMITH</span>
         </a>
 
         {/* Desktop links */}
@@ -48,7 +48,7 @@ export default function Navbar() {
           <li>
             <a
               href="#contact"
-              className="bg-[#D4520A] hover:bg-[#F06A1A] text-white text-xs tracking-[0.1em] uppercase px-5 py-2.5 transition-colors duration-200 font-medium"
+              className="bg-[#38BDF8] hover:bg-[#0EA5E9] text-white text-xs tracking-[0.1em] uppercase px-5 py-2.5 transition-colors duration-200 font-medium"
             >
               Hubungi Kami
             </a>
@@ -73,7 +73,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-[#181818]/98 flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-40 bg-[#0F172A]/98 flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {links.map((l, i) => (
               <motion.a
@@ -94,7 +94,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mt-4 bg-[#D4520A] text-white px-8 py-3 text-sm tracking-widest uppercase"
+              className="mt-4 bg-[#38BDF8] text-white px-8 py-3 text-sm tracking-widest uppercase"
             >
               Hubungi Kami
             </motion.a>

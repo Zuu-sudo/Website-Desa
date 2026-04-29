@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Star, Send, CheckCircle } from 'lucide-react'
 import { INITIAL_REVIEWS, PRODUCTS } from '../data/content'
 
-const PALETTE = ['#D4520A', '#C9A84C', '#3a6b3a', '#2F5FA8', '#7B3FA8']
+const PALETTE = ['#38BDF8', '#94A3B8', '#3a6b3a', '#2F5FA8', '#7B3FA8']
 
 function StarRating({ value, onChange, readonly = false }) {
   const [hover, setHover] = useState(0)
@@ -23,7 +23,7 @@ function StarRating({ value, onChange, readonly = false }) {
             size={readonly ? 16 : 22}
             className={`transition-colors ${
               s <= (hover || value)
-                ? 'fill-[#C9A84C] text-[#C9A84C]'
+                ? 'fill-[#94A3B8] text-[#94A3B8]'
                 : 'fill-transparent text-white/25'
             }`}
           />
@@ -66,7 +66,7 @@ function ReviewCard({ review, index }) {
           {initials}
         </div>
         <div>
-          <p className="text-[#181818] text-sm font-medium leading-tight">{review.name}</p>
+          <p className="text-[#0F172A] text-sm font-medium leading-tight">{review.name}</p>
           <p className="text-[#6b6b6b] text-xs mt-0.5">
             {review.city}
           </p>
@@ -86,7 +86,7 @@ function FormField({ label, children }) {
 }
 
 const inputClass =
-  'bg-white/6 border border-white/10 text-white placeholder:text-white/25 px-4 py-2.5 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors'
+  'bg-white/6 border border-white/10 text-white placeholder:text-white/25 px-4 py-2.5 text-sm focus:outline-none focus:border-[#94A3B8] transition-colors'
 
 export default function Reviews() {
   const [reviews, setReviews] = useState(INITIAL_REVIEWS)
@@ -123,19 +123,18 @@ export default function Reviews() {
   }
 
   return (
-    <section id="reviews" className="bg-[#EAECEF] py-24 px-8 md:px-14">
+    <section id="reviews" className="bg-[#F3F4F6] py-24 px-8 md:px-14">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
-          ref={titleRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16"
         >
           <div>
             <div className="tag">Ulasan Pelanggan</div>
-            <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-bold leading-tight text-[#181818]">
+            <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-bold leading-tight text-[#0A0A0A]">
               Kata <span className="italic text-[#D4520A]">Mereka</span>
             </h2>
           </div>
@@ -165,7 +164,7 @@ export default function Reviews() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7 }}
-          className="mt-14 bg-[#181818] p-8 md:p-12"
+          className="mt-14 bg-[#0A0A0A] p-8 md:p-12"
         >
           <div className="mb-8">
             <h3 className="font-display text-3xl text-white font-bold mb-2">

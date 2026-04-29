@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen bg-[#181818] overflow-hidden flex items-center"
+      className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex items-center"
     >
       {/* Grid texture */}
       <div
@@ -72,7 +72,7 @@ export default function Hero() {
         <motion.div variants={item} className="flex flex-wrap justify-center gap-4">
           <a
             href="#products"
-            className="animate-glow inline-flex items-center gap-3 bg-[#D4520A] hover:bg-[#F06A1A] text-white px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
+            className="animate-glow inline-flex items-center gap-3 bg-[#D4520A] hover:bg-[#F1F5F9] text-white hover:text-[#0A0A0A] px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
           >
             Lihat Produk
             <ArrowDown size={15} />
@@ -99,7 +99,7 @@ export default function Hero() {
             { num: '100%', label: 'Produk Lokal' },
           ].map((s) => (
             <div key={s.label}>
-              <span className="font-display text-4xl font-bold text-[#C9A84C] block">{s.num}</span>
+              <span className="font-display text-4xl font-bold text-[#94A3B8] block">{s.num}</span>
               <span className="text-white/40 text-xs tracking-widest uppercase">{s.label}</span>
             </div>
           ))}
@@ -117,7 +117,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-px h-10 bg-gradient-to-b from-[#D4520A] to-transparent"
+          className="w-px h-10 bg-gradient-to-b from-[#38BDF8] to-transparent"
         />
       </motion.div>
     </section>
