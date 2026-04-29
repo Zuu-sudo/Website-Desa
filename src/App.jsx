@@ -195,25 +195,10 @@ function About() {
   const mobile = useIsMobile();
   return (
     <section id="about" style={{ background: "#EAECEF", padding: mobile ? "60px 24px" : "90px clamp(24px,5vw,60px)" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr", gap: mobile ? 40 : 80, alignItems: "center" }}>
-        <FadeUp>
-          <div style={{ position: "relative" }}>
-            <div style={{ overflow: "hidden", borderRadius: 2, boxShadow: "0 24px 60px rgba(0,0,0,0.18)" }}>
-              <img src="https://i.imgur.com/dFuKkfc.jpeg" style={{ width: "100%", height: mobile ? 300 : 500, objectFit: "cover", display: "block", transition: "transform 0.7s ease, filter 0.4s", filter: "saturate(0.85)" }}
-                onMouseEnter={e => { e.target.style.transform = "scale(1.05)"; e.target.style.filter = "saturate(1.1)"; }}
-                onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.filter = "saturate(0.85)"; }} alt="Proses tempa besi" />
-            </div>
-            <div style={{ position: "absolute", bottom: -16, right: -16, width: "100%", height: "100%", border: "1px solid rgba(201,168,76,0.35)", borderRadius: 2, zIndex: -1, pointerEvents: "none" }} />
-            <div style={{ position: "absolute", bottom: -24, left: 28, background: "#181818", color: "#fff", padding: "18px 24px" }}>
-              <p style={{ fontFamily: "Georgia,serif", fontSize: "1.8rem", fontWeight: 900, color: "#C9A84C", lineHeight: 1 }}>Kureksari</p>
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", marginTop: 4 }}>Waru, Sidoarjo</p>
-            </div>
-          </div>
-        </FadeUp>
-
+      <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
         <FadeUp delay={0.15}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 16 }}>
-            <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} /> Tentang Kami
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 16 }}>
+            <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} /> Tentang Kami <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} />
           </div>
           <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: "#181818" }}>
             Diwariskan<br /><span style={{ color: "#D4520A", fontStyle: "italic" }}>Lintas Generasi</span>
@@ -224,7 +209,7 @@ function About() {
           <p style={{ color: "#6b6b6b", fontSize: "0.97rem", lineHeight: 1.9, marginBottom: 28 }}>
             Setiap produk dibuat oleh para ahli yang profesional. Kami memastikan setiap detail diperhatikan, dari pemilihan bahan hingga hasil akhir yang kuat dan tahan lama.
           </p>
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10, marginBottom: 32 }}>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 10, marginBottom: 32, padding: 0 }}>
             {["Bahan baku pilihan, kontrol kualitas ketat", "Pengerjaan custom sesuai kebutuhan pelanggan", "Pengiriman ke seluruh wilayah Jawa Timur", "Harga kompetitif, langsung dari pengrajin", "Pelayanan responsif via WhatsApp"].map(item => (
               <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: "0.88rem", color: "#2c2c2c" }}>
                 <span style={{ color: "#D4520A", fontSize: "0.7rem" }}>✦</span>{item}
