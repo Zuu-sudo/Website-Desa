@@ -501,8 +501,8 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom" style={{ display: "flex", justifyContent: "space-between", color: "rgba(255,255,255,0.18)", fontSize: "0.72rem", flexWrap: "wrap", gap: 8 }}>
-          <span>© 2025 Kureksari Blacksmith. Semua hak dilindungi.</span>
-          <span>Dibuat untuk para pengrajin lokal Sidoarjo</span>
+          <span>© 2026 Kureksari Blacksmith. Semua hak dilindungi.</span>
+          <span>Dibuat untuk pengrajin lokal Sidoarjo</span>
         </div>
       </div>
     </footer>

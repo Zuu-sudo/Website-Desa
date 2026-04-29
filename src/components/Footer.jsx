@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col md:flex-row justify-between text-white/20 text-xs gap-2">
           <span>© {year} Kureksari Blacksmith. Semua hak dilindungi.</span>
-          <span>Dibuat untuk para pengrajin lokal Kureksari</span>
+          <span>Dibuat untuk pengrajin lokal Kureksari</span>
         </div>
       </div>
     </footer>
