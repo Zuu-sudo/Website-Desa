@@ -457,7 +457,7 @@ function Contact() {
           <p style={{ color: "rgba(255,255,255,0.38)", fontSize: "0.88rem", lineHeight: 1.75, maxWidth: 340, marginBottom: 32 }}>
             Cara paling mudah untuk tanya harga, negosiasi, atau pesan langsung. Respon cepat dari tim kami.
           </p>
-          <a href="https://wa.me/6282132310749?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk%20besi%20dari%20Kureksari" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/6282132310749?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20harga%20untuk%20pemesanan%20produk%20%5Bjelaskan%20produk%20yang%20anda%20inginkan%5D" target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-flex", alignItems: "center", gap: 14, background: "#25D366", color: "#fff", padding: "15px 30px", textDecoration: "none", fontSize: "0.92rem", fontWeight: 700, width: "fit-content", boxShadow: "0 8px 28px rgba(37,211,102,0.2)", transition: "all 0.25s" }}
             onMouseEnter={e => { e.currentTarget.style.background = "#1db954"; e.currentTarget.style.transform = "translateY(-2px)" }}
             onMouseLeave={e => { e.currentTarget.style.background = "#25D366"; e.currentTarget.style.transform = "translateY(0)" }}>

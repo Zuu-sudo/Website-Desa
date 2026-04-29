@@ -50,7 +50,7 @@ export const ABOUT = {
 
 export const CONTACT = {
   whatsapp: '6282132310749',
-  waMessage: 'Halo%20Pak%2C%20saya%20ingin%20menanyakan%20harga%20untuk%20produk%20ini%20[sebutkan produk yang anda inginkan]',
+  waMessage: 'Halo%20Pak%2C%20saya%20ingin%20menanyakan%20harga%20untuk%20pemesanan%20produk%20%5Bjelaskan%20produk%20yang%20anda%20inginkan%5D',
   address: 'Desa Kureksari, Waru, Sidoarjo, Jawa Timur',
   persons: [
     { name: 'Harisun', role: 'Pemilik & Pengrajin Utama', phone: '+6282132310749' },
