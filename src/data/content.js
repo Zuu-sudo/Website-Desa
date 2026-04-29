@@ -106,12 +106,11 @@ export const INITIAL_REVIEWS = [
 ]
 
 export const CONTACT = {
-  whatsapp: '628xxxxxxxxxx',
+  whatsapp: '6282132310749',
   waMessage: 'Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk%20besi%20dari%20Kureksari',
   address: 'Desa Kureksari, Waru, Sidoarjo, Jawa Timur',
   persons: [
-    { name: 'Pak Ahmad', role: 'Pemilik & Pengrajin Utama', phone: '+62 8xx-xxxx-xxxx' },
-    { name: 'Pak Budi', role: 'Bagian Penjualan', phone: '+62 8xx-xxxx-xxxx' },
+    { name: 'Pak Rt', role: 'Pemilik & Pengrajin Utama', phone: '+62 8282132310749' },
   ],
   hours: [
     { day: 'Senin – Jumat', time: '07.00 – 17.00' },

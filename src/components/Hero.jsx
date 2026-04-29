@@ -112,7 +112,7 @@ export default function Hero() {
             <ArrowDown size={15} />
           </a>
           <a
-            href={`https://wa.me/628xxxxxxxxxx?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk`}
+            href={`https://wa.me/6282132310749?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 border border-white/20 hover:border-[#C9A84C] text-white/75 hover:text-[#C9A84C] px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
