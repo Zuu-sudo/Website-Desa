@@ -504,7 +504,7 @@ function Contact() {
           </p>
           {[
             { icon:<svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, label:"Alamat", val:"Desa Kureksari, Waru, Sidoarjo\nJawa Timur, Indonesia" },
-            { icon:<svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>, label:"Kontak", val:"Pak Ahmad: +62 8xx-xxxx-xxxx\nPak Budi: +62 8xx-xxxx-xxxx" },
+            { icon:<svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>, label:"Kontak", val:"Pak Rt: +628282132310749" },
             { icon:<svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, label:"Jam Kerja", val:"Senin–Jumat 07.00–17.00 WIB\nSabtu 07.00–14.00 WIB" },
             { icon:<svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 3 20 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>, label:"Pengiriman", val:"Seluruh Jawa Timur & Ekspedisi Nasional" },
           ].map(({icon,label,val}) => (
@@ -530,7 +530,7 @@ function Contact() {
           <p style={{ color:"rgba(255,255,255,0.38)", fontSize:"0.88rem", lineHeight:1.75, maxWidth:340, marginBottom:32 }}>
             Cara paling mudah untuk tanya harga, negosiasi, atau pesan langsung. Respon cepat dari tim kami.
           </p>
-          <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk%20besi" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/6282132310749?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk%20besi%20dari%20Kureksari" target="_blank" rel="noopener noreferrer"
             style={{ display:"inline-flex", alignItems:"center", gap:14, background:"#25D366", color:"#fff", padding:"15px 30px", textDecoration:"none", fontSize:"0.92rem", fontWeight:700, width:"fit-content", boxShadow:"0 8px 28px rgba(37,211,102,0.2)", transition:"all 0.25s" }}
             onMouseEnter={e=>{e.currentTarget.style.background="#1db954";e.currentTarget.style.transform="translateY(-2px)"}}
             onMouseLeave={e=>{e.currentTarget.style.background="#25D366";e.currentTarget.style.transform="translateY(0)"}}>
