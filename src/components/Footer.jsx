@@ -6,12 +6,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-white/6 mb-6">
           <div>
             <p className="font-display text-xl font-bold text-[#C9A84C] tracking-widest">
-              BESI<span className="text-[#B84A2F] italic">KUREKSARI</span>
+              IRON SMITH <span className="text-[#D4520A] italic">KUREKSARI</span>
             </p>
             <p className="text-white/25 text-xs mt-1">Pande Besi Tradisional · Sidoarjo, Jawa Timur</p>
           </div>
           <div className="flex flex-wrap gap-6">
-            {['#about', '#products', '#gallery', '#reviews', '#contact'].map((href) => (
+            {['#about', '#products', '#reviews', '#contact'].map((href) => (
               <a
                 key={href}
                 href={href}
@@ -23,8 +23,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-between text-white/20 text-xs gap-2">
-          <span>© {year} Besi Kureksari. Semua hak dilindungi.</span>
-          <span>Dibuat dengan ❤ untuk pengrajin lokal Sidoarjo</span>
+          <span>© {year} Iron Smith Kureksari. Semua hak dilindungi.</span>
+          <span>Dibuat untuk para pengrajin lokal Kureksari</span>
         </div>
       </div>
     </footer>

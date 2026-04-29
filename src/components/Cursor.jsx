@@ -27,13 +27,13 @@ export default function Cursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-[#B84A2F] rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 bg-[#D4520A] rounded-full pointer-events-none z-[9999]"
         style={{ translateX: '-50%', translateY: '-50%' }}
         animate={{ x: pos.x, y: pos.y, scale: clicking ? 0.5 : 1 }}
         transition={{ duration: 0.05 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-9 h-9 border border-[#B84A2F]/60 rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-9 h-9 border border-[#D4520A]/60 rounded-full pointer-events-none z-[9998]"
         style={{ translateX: '-50%', translateY: '-50%' }}
         animate={{ x: ring.x, y: ring.y, scale: clicking ? 1.5 : 1 }}
         transition={{ duration: 0.15 }}

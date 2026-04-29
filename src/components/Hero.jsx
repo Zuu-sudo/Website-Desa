@@ -33,7 +33,7 @@ export default function Hero() {
       {/* BG image with parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1565785901975-8b40df05e07d?w=1800&auto=format&fit=crop&q=80"
+          src="https://i.imgur.com/dFuKkfc.jpeg"
           alt="Pande besi"
           className="w-full h-full object-cover opacity-20"
         />
@@ -54,7 +54,7 @@ export default function Hero() {
       {SPARKS.map((s, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-[#E8651A] z-10"
+          className="absolute rounded-full bg-[#F06A1A] z-10"
           style={{ top: s.top, left: s.left, width: s.size, height: s.size }}
           animate={{ y: [0, -14, 0], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 3 + i * 0.5, delay: s.delay, repeat: Infinity, ease: 'easeInOut' }}
@@ -68,7 +68,7 @@ export default function Hero() {
         transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
       />
       <motion.div
-        className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-[#B84A2F]/15 z-0 hidden lg:block"
+        className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-[#D4520A]/15 z-0 hidden lg:block"
         animate={{ rotate: -360 }}
         transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
       />
@@ -82,7 +82,7 @@ export default function Hero() {
         className="relative z-10 px-8 md:px-14 pt-28 pb-20 max-w-3xl"
       >
         <motion.div variants={item} className="tag">
-          Pande Besi Tradisional · Desa Kureksari · Sidoarjo
+          Pande Besi Tradisional Desa Kureksari Sidoarjo
         </motion.div>
 
         <motion.h1
@@ -90,7 +90,7 @@ export default function Hero() {
           className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.95] font-bold text-white mb-8"
         >
           Kualitas{' '}
-          <span className="text-[#B84A2F] italic">Besi</span>
+          <span className="text-[#D4520A] italic">Besi</span>
           <br />dari Tangan
           <br />
           <span className="text-[#C9A84C]">Para Ahli.</span>
@@ -100,13 +100,13 @@ export default function Hero() {
           variants={item}
           className="text-white/55 text-base md:text-lg leading-relaxed max-w-lg mb-10"
         >
-          Pande besi Kureksari telah menempa produk berkualitas selama puluhan tahun — sparepart industri, tiang listrik, alat pertanian, hingga pesanan custom. Pesan langsung dari pengrajinnya.
+          Pande besi Kureksari telah menempa produk berkualitas selama puluhan tahun khususnya sparepart industri, hingga pesanan custom. Pesan langsung dari pengrajinnya.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-wrap gap-4">
           <a
             href="#products"
-            className="animate-glow inline-flex items-center gap-3 bg-[#B84A2F] hover:bg-[#E8651A] text-white px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
+            className="animate-glow inline-flex items-center gap-3 bg-[#D4520A] hover:bg-[#F06A1A] text-white px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
           >
             Lihat Produk
             <ArrowDown size={15} />
@@ -149,7 +149,7 @@ export default function Hero() {
       >
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#181818] to-transparent z-10" />
         <img
-          src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=900&auto=format&fit=crop&q=80"
+          src="https://i.imgur.com/dFuKkfc.jpeg"
           alt="Pengrajin besi"
           className="w-full h-full object-cover opacity-50"
         />
@@ -167,7 +167,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-px h-10 bg-gradient-to-b from-[#B84A2F] to-transparent"
+          className="w-px h-10 bg-gradient-to-b from-[#D4520A] to-transparent"
         />
       </motion.div>
     </section>

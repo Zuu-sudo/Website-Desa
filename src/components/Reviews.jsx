@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Star, Send, CheckCircle } from 'lucide-react'
 import { INITIAL_REVIEWS, PRODUCTS } from '../data/content'
 
-const PALETTE = ['#B84A2F', '#C9A84C', '#3a6b3a', '#2F5FA8', '#7B3FA8']
+const PALETTE = ['#D4520A', '#C9A84C', '#3a6b3a', '#2F5FA8', '#7B3FA8']
 
 function StarRating({ value, onChange, readonly = false }) {
   const [hover, setHover] = useState(0)
@@ -68,8 +68,7 @@ function ReviewCard({ review, index }) {
         <div>
           <p className="text-[#181818] text-sm font-medium leading-tight">{review.name}</p>
           <p className="text-[#6b6b6b] text-xs mt-0.5">
-            {review.city}{review.role ? ` · ${review.role}` : ''}
-            {review.product ? ` · ${review.product}` : ''}
+            {review.city}
           </p>
         </div>
       </div>
@@ -91,7 +90,7 @@ const inputClass =
 
 export default function Reviews() {
   const [reviews, setReviews] = useState(INITIAL_REVIEWS)
-  const [form, setForm] = useState({ name: '', city: '', role: '', product: '', rating: 0, text: '' })
+  const [form, setForm] = useState({ name: '', city: '', rating: 0, text: '' })
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
 
@@ -118,13 +117,13 @@ export default function Reviews() {
       verified: false,
     }
     setReviews((prev) => [newReview, ...prev])
-    setForm({ name: '', city: '', role: '', product: '', rating: 0, text: '' })
+    setForm({ name: '', city: '', rating: 0, text: '' })
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 4000)
   }
 
   return (
-    <section id="reviews" className="bg-[#F4EFE6] py-24 px-8 md:px-14">
+    <section id="reviews" className="bg-[#EAECEF] py-24 px-8 md:px-14">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -137,11 +136,11 @@ export default function Reviews() {
           <div>
             <div className="tag">Ulasan Pelanggan</div>
             <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-bold leading-tight text-[#181818]">
-              Kata <span className="italic text-[#B84A2F]">Mereka</span>
+              Kata <span className="italic text-[#D4520A]">Mereka</span>
             </h2>
           </div>
           <div className="text-right">
-            <p className="font-display text-6xl font-bold text-[#B84A2F] leading-none">{avgRating}</p>
+            <p className="font-display text-6xl font-bold text-[#D4520A] leading-none">{avgRating}</p>
             <div className="flex justify-end gap-0.5 my-1.5">
               {[1, 2, 3, 4, 5].map((s) => (
                 <Star key={s} size={14} className="fill-[#C9A84C] text-[#C9A84C]" />
@@ -187,10 +186,10 @@ export default function Reviews() {
                   onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
                 />
               </FormField>
-              <FormField label="Kota & Profesi">
+              <FormField label="Kota">
                 <input
                   className={inputClass}
-                  placeholder="contoh: Surabaya · Kontraktor"
+                  placeholder="contoh: Surabaya"
                   value={form.city}
                   onChange={(e) => setForm((p) => ({ ...p, city: e.target.value }))}
                 />
@@ -198,21 +197,6 @@ export default function Reviews() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <FormField label="Produk yang Dibeli">
-                <select
-                  className={`${inputClass} cursor-pointer`}
-                  value={form.product}
-                  onChange={(e) => setForm((p) => ({ ...p, product: e.target.value }))}
-                  style={{ background: 'rgba(255,255,255,0.06)' }}
-                >
-                  <option value="" style={{ background: '#181818' }}>-- Pilih Produk --</option>
-                  {PRODUCTS.map((p) => (
-                    <option key={p.id} value={p.name} style={{ background: '#181818' }}>
-                      {p.name}
-                    </option>
-                  ))}
-                </select>
-              </FormField>
               <FormField label="Rating Anda">
                 <div className="flex items-center h-10 pl-1">
                   <StarRating
@@ -242,7 +226,7 @@ export default function Reviews() {
             <div className="flex items-center gap-5 pt-2">
               <button
                 type="submit"
-                className="inline-flex items-center gap-3 bg-[#B84A2F] hover:bg-[#E8651A] text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors duration-200 animate-glow"
+                className="inline-flex items-center gap-3 bg-[#D4520A] hover:bg-[#F06A1A] text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors duration-200 animate-glow"
               >
                 <Send size={14} />
                 Kirim Ulasan

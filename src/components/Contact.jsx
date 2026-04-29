@@ -38,7 +38,7 @@ export default function Contact() {
             Hubungi Kami
           </div>
           <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-bold text-white leading-tight mb-4">
-            Siap Melayani <span className="italic text-[#B84A2F]">Anda</span>
+            Siap Melayani <span className="italic text-[#D4520A]">Anda</span>
           </h2>
           <p className="text-white/40 text-sm leading-relaxed mb-12 max-w-md">
             Punya pertanyaan soal produk, harga, atau mau pesan langsung? Kami siap membantu dengan cepat dan ramah.

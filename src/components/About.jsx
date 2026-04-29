@@ -3,12 +3,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const TICKER_ITEMS = [
-  'Sparepart Industri', '✦', 'Tiang Listrik', '✦',
-  'Alat Pertanian', '✦', 'Pagar Custom', '✦',
-  'Pesanan Custom', '✦', 'Perkakas Dapur', '✦',
-  'Sparepart Industri', '✦', 'Tiang Listrik', '✦',
-  'Alat Pertanian', '✦', 'Pagar Custom', '✦',
-  'Pesanan Custom', '✦', 'Perkakas Dapur', '✦',
+  'Sparepart Industri', '✦', 'Pesanan Custom', '✦',
 ]
 
 function FadeSection({ children, className = '' }) {
@@ -31,7 +26,7 @@ export default function About() {
   return (
     <>
       {/* Marquee ticker */}
-      <div className="bg-[#B84A2F] py-3.5 overflow-hidden">
+      <div className="bg-[#D4520A] py-3.5 overflow-hidden">
         <div className="marquee-track">
           {TICKER_ITEMS.map((t, i) => (
             <span key={i} className="text-white/90 text-xs tracking-[0.2em] uppercase font-medium px-5 whitespace-nowrap">
@@ -42,15 +37,14 @@ export default function About() {
       </div>
 
       {/* About */}
-      <section id="about" className="bg-[#F4EFE6] py-24 px-8 md:px-14">
+      <section id="about" className="bg-[#EAECEF] py-24 px-8 md:px-14">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image side */}
           <FadeSection>
             <div className="relative">
               <div className="img-reveal rounded-sm overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1565785901975-8b40df05e07d?w=900&auto=format&fit=crop&q=80"
-                  alt="Proses pande besi"
+                  src="https://i.imgur.com/dFuKkfc.jpeg"
                   className="w-full h-[520px] object-cover"
                 />
               </div>
@@ -69,13 +63,13 @@ export default function About() {
             <div className="tag">Tentang Kami</div>
             <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-bold leading-tight mb-6 text-[#181818]">
               Diwariskan<br />
-              <span className="italic text-[#B84A2F]">Lintas Generasi</span>
+              <span className="italic text-[#D4520A]">Lintas Generasi</span>
             </h2>
             <p className="text-[#6b6b6b] text-base leading-relaxed mb-5">
-              Desa Kureksari di Sidoarjo dikenal sebagai salah satu sentra pande besi tertua di Jawa Timur. Para pengrajin di sini mewarisi ilmu tempa besi secara turun-temurun selama lebih dari dua dekade.
+              Desa Kureksari di Sidoarjo dikenal sebagai salah satu sentra pande besi tertua di Jawa Timur. Para pengrajin di sini mewarisi ilmu tempa besi secara turun-temurun.
             </p>
             <p className="text-[#6b6b6b] text-base leading-relaxed mb-8">
-              Setiap produk dibuat dengan tangan oleh para ahli yang berpengalaman — bukan produksi massal pabrik. Kami memastikan setiap detail diperhatikan, dari pemilihan bahan hingga hasil akhir yang kuat dan tahan lama.
+              Setiap produk dibuat oleh para ahli yang profesional. Kami memastikan setiap detail diperhatikan, dari pemilihan bahan hingga hasil akhir yang kuat dan tahan lama.
             </p>
             <ul className="flex flex-col gap-3 mb-10">
               {[
@@ -86,14 +80,14 @@ export default function About() {
                 'Pelayanan responsif via WhatsApp',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm text-[#2c2c2c]">
-                  <span className="text-[#B84A2F] text-xs">✦</span>
+                  <span className="text-[#D4520A] text-xs">✦</span>
                   {item}
                 </li>
               ))}
             </ul>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#B84A2F] border-b border-[#B84A2F]/40 hover:border-[#B84A2F] pb-1 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#D4520A] border-b border-[#D4520A]/40 hover:border-[#D4520A] pb-1 transition-colors"
             >
               Hubungi Kami Sekarang →
             </a>

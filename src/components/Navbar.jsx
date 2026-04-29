@@ -5,7 +5,6 @@ import { Menu, X } from 'lucide-react'
 const links = [
   { label: 'Tentang', href: '#about' },
   { label: 'Produk', href: '#products' },
-  { label: 'Galeri', href: '#gallery' },
   { label: 'Ulasan', href: '#reviews' },
 ]
 
@@ -25,14 +24,13 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-14 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-14 transition-all duration-500 ${scrolled
             ? 'py-4 bg-[#181818]/96 backdrop-blur-md border-b border-white/5 shadow-xl'
             : 'py-6 bg-transparent'
-        }`}
+          }`}
       >
         <a href="#" className="font-display text-xl font-bold text-[#C9A84C] tracking-widest">
-          BESI<span className="text-[#B84A2F] italic">KUREKSARI</span>
+          IRON SMITH <span className="text-[#D4520A] italic">KUREKSARI</span>
         </a>
 
         {/* Desktop links */}
@@ -50,7 +48,7 @@ export default function Navbar() {
           <li>
             <a
               href="#contact"
-              className="bg-[#B84A2F] hover:bg-[#E8651A] text-white text-xs tracking-[0.1em] uppercase px-5 py-2.5 transition-colors duration-200 font-medium"
+              className="bg-[#D4520A] hover:bg-[#F06A1A] text-white text-xs tracking-[0.1em] uppercase px-5 py-2.5 transition-colors duration-200 font-medium"
             >
               Hubungi Kami
             </a>
@@ -96,7 +94,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mt-4 bg-[#B84A2F] text-white px-8 py-3 text-sm tracking-widest uppercase"
+              className="mt-4 bg-[#D4520A] text-white px-8 py-3 text-sm tracking-widest uppercase"
             >
               Hubungi Kami
             </motion.a>

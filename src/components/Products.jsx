@@ -28,7 +28,7 @@ function ProductCard({ product, index }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
       {/* Tag */}
-      <div className="absolute top-4 left-4 bg-[#B84A2F] text-white text-[10px] tracking-widest uppercase px-2.5 py-1 font-medium">
+      <div className="absolute top-4 left-4 bg-[#D4520A] text-white text-[10px] tracking-widest uppercase px-2.5 py-1 font-medium">
         {product.tag}
       </div>
 
@@ -68,7 +68,7 @@ export default function Products() {
           <div>
             <div className="tag">Produk Kami</div>
             <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-bold text-white leading-tight">
-              Apa yang <span className="italic text-[#B84A2F]">Kami Buat</span>
+              Apa yang <span className="italic text-[#D4520A]">Kami Buat</span>
             </h2>
           </div>
           <p className="text-white/45 text-sm max-w-sm leading-relaxed">
