@@ -110,7 +110,7 @@ export const CONTACT = {
   waMessage: 'Halo%20Pak%2C%20saya%20ingin%20menanyakan%20produk%20besi%20dari%20Kureksari',
   address: 'Desa Kureksari, Waru, Sidoarjo, Jawa Timur',
   persons: [
-    { name: 'Pak Rt', role: 'Pemilik & Pengrajin Utama', phone: '+62 8282132310749' },
+    { name: 'Pak Rt', role: 'Pemilik & Pengrajin Utama', phone: '+628282132310749' },
   ],
   hours: [
     { day: 'Senin – Jumat', time: '07.00 – 17.00' },
