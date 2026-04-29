@@ -44,7 +44,7 @@ export default function About() {
             <div className="relative">
               <div className="img-reveal rounded-sm overflow-hidden shadow-2xl">
                 <img
-                  src="https://i.imgur.com/dFuKkfc.jpeg"
+                  src="https://i.imgur.com/SlkhufG.jpeg"
                   className="w-full h-[520px] object-cover"
                 />
               </div>

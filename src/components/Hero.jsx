@@ -30,17 +30,6 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-screen bg-[#181818] overflow-hidden flex items-center"
     >
-      {/* BG image with parallax */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
-        <img
-          src="https://i.imgur.com/dFuKkfc.jpeg"
-          alt="Pande besi"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#181818] via-[#181818]/80 to-[#181818]/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent" />
-      </motion.div>
-
       {/* Grid texture */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03]"
@@ -50,38 +39,15 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating spark dots */}
-      {SPARKS.map((s, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-[#F06A1A] z-10"
-          style={{ top: s.top, left: s.left, width: s.size, height: s.size }}
-          animate={{ y: [0, -14, 0], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 3 + i * 0.5, delay: s.delay, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      ))}
-
-      {/* Decorative circle */}
-      <motion.div
-        className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-[#C9A84C]/10 z-0 hidden lg:block"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-      />
-      <motion.div
-        className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-[#D4520A]/15 z-0 hidden lg:block"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
-      />
-
       {/* Content */}
       <motion.div
         style={{ opacity }}
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 px-8 md:px-14 pt-28 pb-20 max-w-3xl"
+        className="relative z-10 px-8 md:px-14 pt-28 pb-20 max-w-5xl mx-auto text-center flex flex-col items-center"
       >
-        <motion.div variants={item} className="tag">
+        <motion.div variants={item} className="tag mx-auto">
           Pande Besi Tradisional Desa Kureksari Sidoarjo
         </motion.div>
 
@@ -98,12 +64,12 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="text-white/55 text-base md:text-lg leading-relaxed max-w-lg mb-10"
+          className="text-white/55 text-base md:text-lg leading-relaxed max-w-2xl mb-10 mx-auto"
         >
           Pande besi Kureksari telah menempa produk berkualitas selama puluhan tahun khususnya sparepart industri, hingga pesanan custom. Pesan langsung dari pengrajinnya.
         </motion.p>
 
-        <motion.div variants={item} className="flex flex-wrap gap-4">
+        <motion.div variants={item} className="flex flex-wrap justify-center gap-4">
           <a
             href="#products"
             className="animate-glow inline-flex items-center gap-3 bg-[#D4520A] hover:bg-[#F06A1A] text-white px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
@@ -125,7 +91,7 @@ export default function Hero() {
         {/* Stats bar */}
         <motion.div
           variants={item}
-          className="flex flex-wrap gap-10 mt-16 pt-10 border-t border-white/10"
+          className="flex flex-wrap justify-center gap-10 mt-16 pt-10 border-t border-white/10 w-full"
         >
           {[
             { num: '25+', label: 'Tahun Pengalaman' },
@@ -138,22 +104,6 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
-      </motion.div>
-
-      {/* Right image panel */}
-      <motion.div
-        initial={{ opacity: 0, x: 60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="hidden lg:block absolute right-0 top-0 bottom-0 w-[38%] z-5"
-      >
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#181818] to-transparent z-10" />
-        <img
-          src="https://i.imgur.com/dFuKkfc.jpeg"
-          alt="Pengrajin besi"
-          className="w-full h-full object-cover opacity-50"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#181818]/60 via-transparent to-[#181818]/80" />
       </motion.div>
 
       {/* Scroll indicator */}

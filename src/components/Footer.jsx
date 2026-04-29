@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-white/6 mb-6">
           <div>
             <p className="font-display text-xl font-bold text-[#C9A84C] tracking-widest">
-              IRON SMITH <span className="text-[#D4520A] italic">KUREKSARI</span>
+              KUREKSARI <span className="text-[#D4520A] italic">BLACKSMITH</span>
             </p>
             <p className="text-white/25 text-xs mt-1">Pande Besi Tradisional · Sidoarjo, Jawa Timur</p>
           </div>
@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-between text-white/20 text-xs gap-2">
-          <span>© {year} Iron Smith Kureksari. Semua hak dilindungi.</span>
+          <span>© {year} Kureksari Blacksmith. Semua hak dilindungi.</span>
           <span>Dibuat untuk para pengrajin lokal Kureksari</span>
         </div>
       </div>

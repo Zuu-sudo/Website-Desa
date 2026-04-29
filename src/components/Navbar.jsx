@@ -30,7 +30,7 @@ export default function Navbar() {
           }`}
       >
         <a href="#" className="font-display text-xl font-bold text-[#C9A84C] tracking-widest">
-          IRON SMITH <span className="text-[#D4520A] italic">KUREKSARI</span>
+          KUREKSARI <span className="text-[#D4520A] italic">BLACKSMITH</span>
         </a>
 
         {/* Desktop links */}

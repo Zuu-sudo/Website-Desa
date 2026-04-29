@@ -1,116 +1,59 @@
+export const BRAND = {
+  name: 'Kureksari Blacksmith',
+  tagline: 'Pande Besi Tradisional Desa Kureksari Sidoarjo',
+}
+
 export const PRODUCTS = [
   {
     id: 1,
     name: 'Sparepart Industri',
     desc: 'Suku cadang mesin & peralatan industri berbahan besi tempa berkualitas tinggi.',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&auto=format&fit=crop',
+    img: 'https://i.imgur.com/pu7rtXm.jpeg',
     tag: 'Industri',
   },
   {
     id: 2,
-    name: 'Tiang Listrik',
-    desc: 'Tiang besi kokoh untuk instalasi listrik dan proyek infrastruktur.',
-    img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&auto=format&fit=crop',
+    name: 'Alat Konstruksi',
+    desc: 'Peralatan besi kokoh untuk proyek infrastruktur dan pembangunan.',
+    img: 'https://i.imgur.com/8biysCj.jpeg',
     tag: 'Konstruksi',
   },
   {
     id: 3,
-    name: 'Alat Pertanian',
-    desc: 'Cangkul, parang, bajak, dan perkakas pertanian tradisional yang tahan lama.',
-    img: 'https://images.unsplash.com/photo-1586864387789-628af9feed72?w=700&auto=format&fit=crop',
+    name: 'Perkakas Tradisional',
+    desc: 'Cangkul, parang, dan bajak yang dibuat dengan teknik tempa warisan generasi.',
+    img: 'https://i.imgur.com/ywhZaiD.jpeg',
     tag: 'Pertanian',
   },
   {
     id: 4,
-    name: 'Pagar & Teralis Custom',
-    desc: 'Desain pagar dan teralis besi sesuai pesanan — dari klasik hingga modern.',
-    img: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=700&auto=format&fit=crop',
-    tag: 'Custom',
-  },
-  {
-    id: 5,
-    name: 'Perkakas Dapur',
-    desc: 'Wajan besi, spatula, dan peralatan dapur tradisional yang awet seumur hidup.',
-    img: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700&auto=format&fit=crop',
-    tag: 'Rumah Tangga',
-  },
-  {
-    id: 6,
     name: 'Pesanan Custom',
     desc: 'Produk besi apa pun sesuai desain & spesifikasi Anda. Diskusikan kebutuhan Anda.',
-    img: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=700&auto=format&fit=crop',
+    img: 'https://i.imgur.com/80vJXK4.jpeg',
     tag: 'Custom',
   },
 ]
 
-export const GALLERY = [
-  {
-    id: 1,
-    src: 'https://images.unsplash.com/photo-1565785901975-8b40df05e07d?w=900&auto=format&fit=crop',
-    caption: 'Proses tempa di tungku tradisional',
-    span: 'large',
-  },
-  {
-    id: 2,
-    src: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=600&auto=format&fit=crop',
-    caption: 'Pengrajin senior 20+ tahun',
-  },
-  {
-    id: 3,
-    src: 'https://images.unsplash.com/photo-1547623542-de3ff5941ddb?w=600&auto=format&fit=crop',
-    caption: 'Display produk siap kirim',
-  },
-  {
-    id: 4,
-    src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&auto=format&fit=crop',
-    caption: 'Workshop Desa Kureksari',
-  },
-  {
-    id: 5,
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop',
-    caption: 'Sparepart hasil produksi',
-  },
-]
-
-export const INITIAL_REVIEWS = [
-  {
-    id: 1,
-    name: 'Budi Hartono',
-    city: 'Surabaya',
-    role: 'Manajer Produksi',
-    rating: 5,
-    text: 'Kualitas sparepart dari sini beda banget sama yang di pasaran. Sudah 2 tahun pakai, belum ada masalah. Harganya juga kompetitif.',
-    product: 'Sparepart Industri',
-    verified: true,
-  },
-  {
-    id: 2,
-    name: 'Rudi Santoso',
-    city: 'Sidoarjo',
-    role: 'Kontraktor',
-    rating: 5,
-    text: 'Pesan tiang listrik custom, selesai tepat waktu dan hasilnya sangat memuaskan. Komunikasi via WhatsApp juga responsif sekali.',
-    product: 'Tiang Listrik',
-    verified: true,
-  },
-  {
-    id: 3,
-    name: 'Siti Julaiha',
-    city: 'Mojokerto',
-    role: 'Petani',
-    rating: 4,
-    text: 'Sudah langganan 3 tahun buat kebutuhan alat pertanian. Produknya kuat dan awet. Harga langsung dari pengrajin jadi jauh lebih murah.',
-    product: 'Alat Pertanian',
-    verified: true,
-  },
-]
+export const ABOUT = {
+  title: 'Diwariskan Lintas Generasi',
+  desc1: 'Desa Kureksari di Sidoarjo dikenal sebagai salah satu sentra pande besi tertua di Jawa Timur. Para pengrajin di sini mewarisi ilmu tempa besi secara turun-temurun.',
+  desc2: 'Setiap produk dibuat oleh para ahli yang profesional. Kami memastikan setiap detail diperhatikan, dari pemilihan bahan hingga hasil akhir yang kuat dan tahan lama.',
+  img: 'https://i.imgur.com/SlkhufG.jpeg',
+  features: [
+    'Bahan baku pilihan, kontrol kualitas ketat',
+    'Pengerjaan custom sesuai kebutuhan pelanggan',
+    'Pengiriman ke seluruh wilayah Jawa Timur',
+    'Harga kompetitif, langsung dari pengrajin',
+    'Pelayanan responsif via WhatsApp',
+  ]
+}
 
 export const CONTACT = {
   whatsapp: '6282132310749',
   waMessage: 'Halo%20Pak%2C%20saya%20ingin%20menanyakan%20harga%20untuk%20produk%20ini%20[sebutkan produk yang anda inginkan]',
   address: 'Desa Kureksari, Waru, Sidoarjo, Jawa Timur',
   persons: [
-    { name: 'Harisun', role: 'Pemilik & Pengrajin Utama', phone: '+628282132310749' },
+    { name: 'Harisun', role: 'Pemilik & Pengrajin Utama', phone: '+6282132310749' },
   ],
   hours: [
     { day: 'Senin – Jumat', time: '07.00 – 17.00' },

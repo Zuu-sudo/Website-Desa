@@ -77,7 +77,7 @@ function Navbar() {
   return (
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "space-between", padding: scrolled ? "14px clamp(20px,4vw,40px)" : "20px clamp(20px,4vw,40px)", background: scrolled ? "rgba(24,24,24,0.97)" : "rgba(24,24,24,0.6)", backdropFilter: "blur(12px)", borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent", transition: "all 0.4s ease" }}>
       <a href="#hero" style={{ fontFamily: "Georgia,serif", fontSize: "1.2rem", fontWeight: 900, color: "#C9A84C", textDecoration: "none", letterSpacing: "0.08em", zIndex: 101 }}>
-        IRON SMITH <span style={{ color: "#D4520A", fontStyle: "italic" }}>KUREKSARI</span>
+        KUREKSARI <span style={{ color: "#D4520A", fontStyle: "italic" }}>BLACKSMITH</span>
       </a>
       {mobile ? (
         <>
@@ -114,35 +114,26 @@ function Navbar() {
 function Hero() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setTimeout(() => setMounted(true), 100); }, []);
-  const sparks = [{ top: "22%", left: "74%", d: 0 }, { top: "58%", left: "82%", d: 0.6 }, { top: "38%", left: "63%", d: 1.1 }, { top: "72%", left: "71%", d: 0.3 }];
   return (
     <section id="hero" style={{ minHeight: "100vh", background: "#181818", position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: `url(https://i.imgur.com/dFuKkfc.jpeg)`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.18 }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, #111318 45%, rgba(17,19,24,0.7) 75%, rgba(17,19,24,0.2) 100%)" }} />
       <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.018) 59px,rgba(255,255,255,0.018) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.018) 59px,rgba(255,255,255,0.018) 60px)" }} />
 
-      {sparks.map((s, i) => (
-        <div key={i} style={{ position: "absolute", top: s.top, left: s.left, width: 3 + i % 2, height: 3 + i % 2, borderRadius: "50%", background: "#F06A1A", animation: `floatSpark ${3.5 + i * 0.5}s ease-in-out ${s.d}s infinite` }} />
-      ))}
-
-      <div style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", width: 360, height: 360, borderRadius: "50%", border: "1px solid rgba(201,168,76,0.1)", animation: "spinSlow 35s linear infinite" }} />
-      <div style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", width: 260, height: 260, borderRadius: "50%", border: "1px solid rgba(184,74,47,0.15)", animation: "spinSlow 22s linear infinite reverse" }} />
-
-      <div className="hero-content" style={{ position: "relative", zIndex: 2, padding: "130px clamp(24px,5vw,60px) 80px", maxWidth: 780 }}>
+      <div className="hero-content" style={{ position: "relative", zIndex: 2, padding: "130px clamp(24px,5vw,60px) 80px", maxWidth: 900, margin: "0 auto", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <div style={{ opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(30px)", transition: "all 0.8s ease 0.2s", display: "inline-flex", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 28, border: "1px solid rgba(184,74,47,0.3)", padding: "6px 14px" }}>
           <span style={{ width: 20, height: 1, background: "#D4520A", display: "block" }} />
-          Iron Smith · Desa Kureksari · Sidoarjo
+          Kureksari Blacksmith · Sidoarjo
+          <span style={{ width: 20, height: 1, background: "#D4520A", display: "block" }} />
         </div>
 
         <h1 style={{ opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(40px)", transition: "all 0.8s ease 0.35s", fontFamily: "Georgia,serif", fontSize: "clamp(3.2rem,7vw,6.5rem)", fontWeight: 900, lineHeight: 1.08, color: "#fff", marginBottom: 28 }}>
           Kualitas{" "}<span style={{ color: "#D4520A", fontStyle: "italic" }}>Besi</span><br />dari Tangan<br /><span style={{ color: "#C9A84C" }}>Para Ahli.</span>
         </h1>
 
-        <p style={{ opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(30px)", transition: "all 0.8s ease 0.5s", color: "rgba(255,255,255,0.55)", fontSize: "1rem", lineHeight: 1.85, maxWidth: 480, marginBottom: 40 }}>
+        <p style={{ opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(30px)", transition: "all 0.8s ease 0.5s", color: "rgba(255,255,255,0.55)", fontSize: "1rem", lineHeight: 1.85, maxWidth: 580, marginBottom: 40 }}>
           Kami telah menempa produk berkualitas selama puluhan tahun khususnya sparepart industri hingga pesanan custom. Pesan langsung dari pengrajinnya.
         </p>
 
-        <div className="hero-btns" style={{ opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(20px)", transition: "all 0.8s ease 0.65s", display: "flex", gap: 16, flexWrap: "wrap" }}>
+        <div className="hero-btns" style={{ opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(20px)", transition: "all 0.8s ease 0.65s", display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
           <a href="#products" style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#D4520A", color: "#fff", padding: "14px 32px", textDecoration: "none", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.05em", transition: "all 0.25s" }}
             onMouseEnter={e => { e.currentTarget.style.background = "#F06A1A"; e.currentTarget.style.transform = "translateY(-2px)"; }}
             onMouseLeave={e => { e.currentTarget.style.background = "#D4520A"; e.currentTarget.style.transform = "translateY(0)"; }}>
@@ -155,7 +146,7 @@ function Hero() {
           </a>
         </div>
 
-        <div className="hero-stats" style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease 0.85s", display: "flex", gap: 40, marginTop: 56, paddingTop: 36, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+        <div className="hero-stats" style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease 0.85s", display: "flex", gap: 40, marginTop: 56, paddingTop: 36, borderTop: "1px solid rgba(255,255,255,0.1)", justifyContent: "center", width: "100%" }}>
           {[["25+", "Tahun Pengalaman"], ["500+", "Pelanggan Puas"], ["100%", "Produk Lokal"]].map(([n, l]) => (
             <div key={l}>
               <span style={{ fontFamily: "Georgia,serif", fontSize: "2.4rem", fontWeight: 900, color: "#C9A84C", display: "block", lineHeight: 1 }}>{n}</span>
@@ -163,12 +154,6 @@ function Hero() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="hero-right" style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "36%", zIndex: 1 }}>
-        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(90deg,#181818,transparent)", zIndex: 2 }} />
-        <img src="https://i.imgur.com/dFuKkfc.jpeg" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.45 }} alt="" />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(24,24,24,0.5) 0%,transparent 40%,rgba(24,24,24,0.7) 100%)" }} />
       </div>
 
       <div style={{ position: "absolute", bottom: 24, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6, zIndex: 3 }}>
@@ -195,10 +180,25 @@ function About() {
   const mobile = useIsMobile();
   return (
     <section id="about" style={{ background: "#EAECEF", padding: mobile ? "60px 24px" : "90px clamp(24px,5vw,60px)" }}>
-      <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: mobile ? "1fr" : "1fr 1fr", gap: mobile ? 40 : 80, alignItems: "center" }}>
+        <FadeUp>
+          <div style={{ position: "relative" }}>
+            <div style={{ overflow: "hidden", borderRadius: 2, boxShadow: "0 24px 60px rgba(0,0,0,0.18)" }}>
+              <img src="https://i.imgur.com/SlkhufG.jpeg" style={{ width: "100%", height: mobile ? 300 : 500, objectFit: "cover", display: "block", transition: "transform 0.7s ease, filter 0.4s", filter: "saturate(0.85)" }}
+                onMouseEnter={e => { e.target.style.transform = "scale(1.05)"; e.target.style.filter = "saturate(1.1)"; }}
+                onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.filter = "saturate(0.85)"; }} alt="Proses tempa besi" />
+            </div>
+            <div style={{ position: "absolute", bottom: -16, right: -16, width: "100%", height: "100%", border: "1px solid rgba(201,168,76,0.35)", borderRadius: 2, zIndex: -1, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: -24, left: 28, background: "#181818", color: "#fff", padding: "18px 24px" }}>
+              <p style={{ fontFamily: "Georgia,serif", fontSize: "1.8rem", fontWeight: 900, color: "#C9A84C", lineHeight: 1 }}>Kureksari</p>
+              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", marginTop: 4 }}>Waru, Sidoarjo</p>
+            </div>
+          </div>
+        </FadeUp>
+
         <FadeUp delay={0.15}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 16 }}>
-            <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} /> Tentang Kami <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} />
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4520A", fontWeight: 600, marginBottom: 16 }}>
+            <span style={{ width: 22, height: 1, background: "#D4520A", display: "block" }} /> Tentang Kami
           </div>
           <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: "#181818" }}>
             Diwariskan<br /><span style={{ color: "#D4520A", fontStyle: "italic" }}>Lintas Generasi</span>
@@ -209,7 +209,7 @@ function About() {
           <p style={{ color: "#6b6b6b", fontSize: "0.97rem", lineHeight: 1.9, marginBottom: 28 }}>
             Setiap produk dibuat oleh para ahli yang profesional. Kami memastikan setiap detail diperhatikan, dari pemilihan bahan hingga hasil akhir yang kuat dan tahan lama.
           </p>
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 10, marginBottom: 32, padding: 0 }}>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10, marginBottom: 32 }}>
             {["Bahan baku pilihan, kontrol kualitas ketat", "Pengerjaan custom sesuai kebutuhan pelanggan", "Pengiriman ke seluruh wilayah Jawa Timur", "Harga kompetitif, langsung dari pengrajin", "Pelayanan responsif via WhatsApp"].map(item => (
               <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: "0.88rem", color: "#2c2c2c" }}>
                 <span style={{ color: "#D4520A", fontSize: "0.7rem" }}>✦</span>{item}
@@ -486,9 +486,9 @@ function Footer() {
         <div className="footer-inner" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid rgba(255,255,255,0.06)", marginBottom: 18, flexWrap: "wrap", gap: 16 }}>
           <div>
             <p style={{ fontFamily: "Georgia,serif", fontSize: "1.2rem", fontWeight: 900, color: "#C9A84C", letterSpacing: "0.08em" }}>
-              IRON SMITH <span style={{ color: "#D4520A", fontStyle: "italic" }}>KUREKSARI</span>
+              KUREKSARI <span style={{ color: "#D4520A", fontStyle: "italic" }}>BLACKSMITH</span>
             </p>
-            <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.72rem", marginTop: 4 }}>Iron Smith Tradisional · Sidoarjo, Jawa Timur</p>
+            <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.72rem", marginTop: 4 }}>Kureksari Blacksmith Tradisional · Sidoarjo, Jawa Timur</p>
           </div>
           <div className="footer-links" style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
             {["#about", "#products", "#reviews", "#contact"].map(href => (
@@ -500,7 +500,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom" style={{ display: "flex", justifyContent: "space-between", color: "rgba(255,255,255,0.18)", fontSize: "0.72rem", flexWrap: "wrap", gap: 8 }}>
-          <span>© 2025 Iron Smith Kureksari. Semua hak dilindungi.</span>
+          <span>© 2025 Kureksari Blacksmith. Semua hak dilindungi.</span>
           <span>Dibuat untuk para pengrajin lokal Sidoarjo</span>
         </div>
       </div>
