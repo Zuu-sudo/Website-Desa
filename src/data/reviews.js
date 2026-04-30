@@ -42,10 +42,10 @@ function generateReviews(count = 520) {
     const name = `${pick(FIRST_NAMES)} ${pick(LAST_NAMES)}`;
     const city = pick(CITIES);
     const prod = pick(PRODUCTS).toLowerCase();
-    
+
     // Create unique combined text
     let text = `${pick(OPENINGS)} ${pick(QUALITIES)} ${pick(EXPERIENCES)} ${pick(CLOSINGS)}`;
-    
+
     // Replace placeholders
     text = text.replace(/{prod}/g, prod);
     text = text.replace(/{dur}/g, pick(durations));

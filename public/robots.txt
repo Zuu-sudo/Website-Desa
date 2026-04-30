@@ -1,0 +1,15 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kureksari-blacksmith.vercel.app/sitemap.xml
+
+# Crawl delay (optional, be nice to other sites)
+Crawl-delay: 1
+
+# Disallow sensitive paths
+Disallow: /api/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.env

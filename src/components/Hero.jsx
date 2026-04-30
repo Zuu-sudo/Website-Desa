@@ -2,18 +2,9 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { ArrowDown, MessageCircle } from 'lucide-react'
 
-const SPARKS = [
-  { top: '20%', left: '72%', delay: 0, size: 3 },
-  { top: '55%', left: '80%', delay: 0.4, size: 2 },
-  { top: '35%', left: '60%', delay: 0.8, size: 4 },
-  { top: '70%', left: '68%', delay: 0.2, size: 2 },
-  { top: '15%', left: '85%', delay: 1.1, size: 3 },
-]
-
 export default function Hero() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   const container = {
@@ -28,11 +19,11 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex items-center"
+      className="relative min-h-screen min-h-[100dvh] bg-[#0F0F0F] overflow-hidden flex items-center"
     >
       {/* Grid texture */}
       <div
-        className="absolute inset-0 z-0 opacity-[0.03]"
+        className="absolute inset-0 z-0 opacity-[0.04]"
         style={{
           backgroundImage: `repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),
             repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px)`,
@@ -45,43 +36,48 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 px-8 md:px-14 pt-28 pb-20 max-w-5xl mx-auto text-center flex flex-col items-center"
+        className="relative z-10 px-6 sm:px-8 md:px-14 pt-24 pb-16 sm:pt-28 sm:pb-20 w-full max-w-5xl mx-auto text-center flex flex-col items-center"
       >
-        <motion.div variants={item} className="tag mx-auto">
-          Pande Besi Tradisional Desa Kureksari Sidoarjo
+        <motion.div
+          variants={item}
+          className="inline-flex items-center gap-2 text-[9px] sm:text-[10px] tracking-[0.22em] uppercase text-[#E8632A] font-semibold mb-5 sm:mb-7 border border-[#E8632A]/30 px-3 sm:px-3.5 py-1.5"
+        >
+          <span className="w-4 sm:w-5 h-px bg-[#E8632A] block" />
+          Kureksari Blacksmith · Sidoarjo
+          <span className="w-4 sm:w-5 h-px bg-[#E8632A] block" />
         </motion.div>
 
         <motion.h1
           variants={item}
-          className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.95] font-bold text-white mb-8"
+          className="font-display text-[2.5rem] sm:text-[3.5rem] md:text-[clamp(3.2rem,7vw,6.5rem)] leading-[1.05] font-bold text-white mb-5 sm:mb-7 px-2"
         >
           Kualitas{' '}
-          <span className="text-[#D4520A] italic">Besi</span>
+          <span className="text-[#E8632A] italic">Besi</span>
           <br />dari Tangan
           <br />
-          <span className="text-[#C9A84C]">Para Ahli.</span>
+          <span className="text-[#D4AF37]">Para Ahli.</span>
         </motion.h1>
 
         <motion.p
           variants={item}
-          className="text-white/55 text-base md:text-lg leading-relaxed max-w-2xl mb-10 mx-auto"
+          className="text-white/55 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl sm:max-w-2xl mb-8 sm:mb-10 mx-auto px-4"
         >
-          Pande besi Kureksari telah menempa produk berkualitas selama puluhan tahun khususnya sparepart industri, hingga pesanan custom. Pesan langsung dari pengrajinnya.
+          Kami telah menempa produk berkualitas selama puluhan tahun khususnya sparepart industri hingga pesanan custom. Pesan langsung dari pengrajinnya.
         </motion.p>
 
-        <motion.div variants={item} className="flex flex-wrap justify-center gap-4">
+        <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 w-full px-4">
           <a
             href="#products"
-            className="animate-glow inline-flex items-center gap-3 bg-[#D4520A] hover:bg-[#F1F5F9] text-white hover:text-[#0A0A0A] px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 bg-[#E8632A] hover:bg-[#F06A1A] text-white px-6 sm:px-7 py-3 sm:py-3.5 font-medium text-sm tracking-wide transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#E8632A]/20 w-full sm:w-auto"
           >
             Lihat Produk
             <ArrowDown size={15} />
           </a>
           <a
-            href={`https://wa.me/6282132310749?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20harga%20untuk%20pemesanan%20produk%20%5Bjelaskan%20produk%20yang%20anda%20inginkan%5D`}
+            href="https://wa.me/6282132310749?text=Halo%20Pak%2C%20saya%20ingin%20menanyakan%20harga%20untuk%20pemesanan%20produk%20%5BJelaskan%20produk%20yang%20anda%20inginkan%5D"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 border border-white/20 hover:border-[#C9A84C] text-white/75 hover:text-[#C9A84C] px-7 py-3.5 font-medium text-sm tracking-wide transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 border border-white/20 hover:border-[#D4AF37] text-white/75 hover:text-[#D4AF37] px-6 sm:px-7 py-3 sm:py-3.5 font-medium text-sm tracking-wide transition-all duration-300 w-full sm:w-auto"
           >
             <MessageCircle size={15} />
             WhatsApp Sekarang
@@ -91,7 +87,7 @@ export default function Hero() {
         {/* Stats bar */}
         <motion.div
           variants={item}
-          className="flex flex-wrap justify-center gap-10 mt-16 pt-10 border-t border-white/10 w-full"
+          className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-white/10 w-full px-4"
         >
           {[
             { num: '25+', label: 'Tahun Pengalaman' },
@@ -99,26 +95,11 @@ export default function Hero() {
             { num: '100%', label: 'Produk Lokal' },
           ].map((s) => (
             <div key={s.label}>
-              <span className="font-display text-4xl font-bold text-[#94A3B8] block">{s.num}</span>
-              <span className="text-white/40 text-xs tracking-widest uppercase">{s.label}</span>
+              <span className="font-display text-3xl sm:text-4xl font-bold text-[#D4AF37] block">{s.num}</span>
+              <span className="text-white/40 text-[9px] sm:text-[10px] tracking-widest uppercase">{s.label}</span>
             </div>
           ))}
         </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
-      >
-        <span className="text-white/30 text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-px h-10 bg-gradient-to-b from-[#38BDF8] to-transparent"
-        />
       </motion.div>
     </section>
   )
