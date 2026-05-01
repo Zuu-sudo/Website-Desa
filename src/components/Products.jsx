@@ -1,19 +1,12 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 import { PRODUCTS } from '../data/content.js'
 import { SectionTag } from './Icons.jsx'
 
 function ProductCard({ product, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
+  const [isPressed, setIsPressed] = useState(false)
 
   return (
     <motion.div
@@ -22,6 +15,11 @@ function ProductCard({ product, index }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="group relative overflow-hidden cursor-pointer bg-[#2c2c2c] aspect-square"
+      onTouchStart={() => setIsPressed(true)}
+      onTouchEnd={() => setIsPressed(false)}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onMouseLeave={() => setIsPressed(false)}
     >
       {/* Image */}
       <div className="w-full h-full overflow-hidden">
@@ -29,19 +27,19 @@ function ProductCard({ product, index }) {
           src={product.img}
           alt="Produk Kureksari Blacksmith"
           className={`w-full h-full object-cover transition-all duration-700 ${
-            isMobile ? 'opacity-70 active:scale-110' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110 active:scale-110'
+            isPressed ? 'opacity-80 scale-110' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110'
           }`}
         />
       </div>
 
-      {/* Overlay gradient - always visible on mobile */}
+      {/* Overlay gradient */}
       <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-400 ${
-        isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        isPressed ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
       }`} />
 
-      {/* CTA - always visible on mobile */}
+      {/* CTA */}
       <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 transition-all duration-400 ${
-        isMobile ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
+        isPressed ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
       }`}>
         <a
           href="#contact"

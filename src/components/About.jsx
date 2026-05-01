@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { SectionTag } from './Icons.jsx'
 
 function FadeSection({ children, className = '' }) {
@@ -19,18 +19,26 @@ function FadeSection({ children, className = '' }) {
 }
 
 export default function About() {
+  const [isPressed, setIsPressed] = useState(false)
+
   return (
     <section id="about" className="bg-[#F3F4F6] py-24 px-8 md:px-14">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Image side */}
         <FadeSection>
-          <div className="relative group">
+          <div 
+            className="relative group"
+            onTouchStart={() => setIsPressed(true)}
+            onTouchEnd={() => setIsPressed(false)}
+            onMouseDown={() => setIsPressed(true)}
+            onMouseUp={() => setIsPressed(false)}
+            onMouseLeave={() => setIsPressed(false)}
+          >
             <div className="aspect-[4/5] overflow-hidden shadow-2xl">
-              <motion.img
+              <img
                 src="https://i.imgur.com/SlkhufG.jpeg"
                 alt="Pandai Besi Kureksari"
-                className="w-full h-full object-cover group-hover:scale-105 active:scale-105 transition-transform duration-700"
-                whileHover={{ scale: 1.05 }}
+                className={`w-full h-full object-cover transition-transform duration-700 ${isPressed ? 'scale-105' : 'group-hover:scale-105'}`}
               />
             </div>
             {/* Accent frame */}
