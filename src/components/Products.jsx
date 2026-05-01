@@ -6,7 +6,7 @@ import { SectionTag } from './Icons.jsx'
 function ProductCard({ product, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const [isPressed, setIsPressed] = useState(false)
+  const [tapped, setTapped] = useState(false)
 
   return (
     <motion.div
@@ -15,11 +15,7 @@ function ProductCard({ product, index }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="group relative overflow-hidden cursor-pointer bg-[#2c2c2c] aspect-square"
-      onTouchStart={() => setIsPressed(true)}
-      onTouchEnd={() => setIsPressed(false)}
-      onMouseDown={() => setIsPressed(true)}
-      onMouseUp={() => setIsPressed(false)}
-      onMouseLeave={() => setIsPressed(false)}
+      onClick={() => setTapped(!tapped)}
     >
       {/* Image */}
       <div className="w-full h-full overflow-hidden">
@@ -27,19 +23,19 @@ function ProductCard({ product, index }) {
           src={product.img}
           alt="Produk Kureksari Blacksmith"
           className={`w-full h-full object-cover transition-all duration-700 ${
-            isPressed ? 'opacity-80 scale-110' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110'
+            tapped ? 'opacity-80 scale-110' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110'
           }`}
         />
       </div>
 
       {/* Overlay gradient */}
       <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-400 ${
-        isPressed ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        tapped ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
       }`} />
 
       {/* CTA */}
       <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 transition-all duration-400 ${
-        isPressed ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
+        tapped ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
       }`}>
         <a
           href="#contact"

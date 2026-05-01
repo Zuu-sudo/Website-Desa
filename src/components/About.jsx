@@ -19,7 +19,7 @@ function FadeSection({ children, className = '' }) {
 }
 
 export default function About() {
-  const [isPressed, setIsPressed] = useState(false)
+  const [tapped, setTapped] = useState(false)
 
   return (
     <section id="about" className="bg-[#F3F4F6] py-24 px-8 md:px-14">
@@ -27,18 +27,14 @@ export default function About() {
         {/* Image side */}
         <FadeSection>
           <div 
-            className="relative group"
-            onTouchStart={() => setIsPressed(true)}
-            onTouchEnd={() => setIsPressed(false)}
-            onMouseDown={() => setIsPressed(true)}
-            onMouseUp={() => setIsPressed(false)}
-            onMouseLeave={() => setIsPressed(false)}
+            className="relative group cursor-pointer"
+            onClick={() => setTapped(!tapped)}
           >
             <div className="aspect-[4/5] overflow-hidden shadow-2xl">
               <img
                 src="https://i.imgur.com/SlkhufG.jpeg"
                 alt="Pandai Besi Kureksari"
-                className={`w-full h-full object-cover transition-transform duration-700 ${isPressed ? 'scale-105' : 'group-hover:scale-105'}`}
+                className={`w-full h-full object-cover transition-transform duration-700 ${tapped ? 'scale-105' : 'group-hover:scale-105'}`}
               />
             </div>
             {/* Accent frame */}
