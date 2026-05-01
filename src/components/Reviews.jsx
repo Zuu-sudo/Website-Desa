@@ -153,7 +153,7 @@ export default function Reviews() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 sm:gap-6 mb-10 sm:mb-16"
+          className="flex flex-row justify-between items-end gap-4 sm:gap-6 mb-10 sm:mb-16"
         >
           <div>
             <SectionTag>Ulasan Pelanggan</SectionTag>
