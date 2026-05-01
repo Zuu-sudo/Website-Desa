@@ -29,7 +29,7 @@ function ProductCard({ product, index }) {
           src={product.img}
           alt="Produk Kureksari Blacksmith"
           className={`w-full h-full object-cover transition-all duration-700 ${
-            isMobile ? 'opacity-70' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110'
+            isMobile ? 'opacity-70 active:scale-110' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110 active:scale-110'
           }`}
         />
       </div>

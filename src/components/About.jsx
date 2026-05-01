@@ -29,7 +29,7 @@ export default function About() {
               <motion.img
                 src="https://i.imgur.com/SlkhufG.jpeg"
                 alt="Pandai Besi Kureksari"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 active:scale-105 transition-transform duration-700"
                 whileHover={{ scale: 1.05 }}
               />
             </div>
