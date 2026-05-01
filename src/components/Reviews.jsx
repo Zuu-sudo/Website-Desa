@@ -161,9 +161,9 @@ export default function Reviews() {
               Kata <span className="italic text-[#D4520A]">Mereka</span>
             </h2>
           </div>
-          <div className={`text-center md:text-right`}>
+          <div className="text-right">
             <p className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[#D4520A] leading-none">{avgRating}</p>
-            <div className={`flex ${isMobile ? 'justify-center' : 'justify-end'} gap-1 my-1.5`}>
+            <div className="flex justify-end gap-1 my-1.5">
               {[1, 2, 3, 4, 5].map((s) => (
                 <Star key={s} size={isMobile ? 16 : 12} className="fill-[#C9A84C] text-[#C9A84C]" />
               ))}

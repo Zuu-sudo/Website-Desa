@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { SectionTag } from './Icons.jsx'
 
 function FadeSection({ children, className = '' }) {
@@ -19,17 +19,35 @@ function FadeSection({ children, className = '' }) {
 }
 
 export default function About() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   return (
     <section id="about" className="bg-[#F3F4F6] py-24 px-8 md:px-14">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Image side */}
         <FadeSection>
           <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden shadow-2xl">
-              <img
+            <div className={`aspect-[4/5] overflow-hidden shadow-2xl ${isMobile ? '' : 'group'}`}>
+              <motion.img
                 src="https://i.imgur.com/SlkhufG.jpeg"
                 alt="Pandai Besi Kureksari"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover"
+                animate={isMobile ? {
+                  scale: [1, 1.03, 1]
+                } : {}}
+                transition={isMobile ? {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                } : {}}
+                whileHover={!isMobile ? { scale: 1.05 } : {}}
               />
             </div>
             {/* Accent frame */}

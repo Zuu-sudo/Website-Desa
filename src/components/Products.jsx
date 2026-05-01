@@ -1,11 +1,19 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { PRODUCTS } from '../data/content.js'
 import { SectionTag } from './Icons.jsx'
 
 function ProductCard({ product, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   return (
     <motion.div
@@ -20,18 +28,24 @@ function ProductCard({ product, index }) {
         <img
           src={product.img}
           alt="Produk Kureksari Blacksmith"
-          className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700"
+          className={`w-full h-full object-cover transition-all duration-700 ${
+            isMobile ? 'opacity-70' : 'opacity-60 group-hover:opacity-80 group-hover:scale-110'
+          }`}
         />
       </div>
 
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+      {/* Overlay gradient - always visible on mobile */}
+      <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-400 ${
+        isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+      }`} />
 
-      {/* CTA on hover */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
+      {/* CTA - always visible on mobile */}
+      <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 transition-all duration-400 ${
+        isMobile ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
+      }`}>
         <a
           href="#contact"
-          className="inline-flex items-center gap-2 text-[#C9A84C] text-[10px] sm:text-xs tracking-wider uppercase font-medium border-b border-[#C9A84C]/40 hover:border-[#C9A84C] pb-0.5"
+          className="inline-flex items-center gap-2 text-[#C9A84C] text-xs sm:text-xs tracking-wider uppercase font-medium border-b border-[#C9A84C]/40 hover:border-[#C9A84C] pb-0.5"
         >
           Tanya Harga →
         </a>
