@@ -53,7 +53,7 @@ export default function About() {
             Desa Kureksari di Sidoarjo dikenal sebagai salah satu sentra pande besi tertua di Jawa Timur. Para pengrajin di sini mewarisi ilmu tempa besi secara turun-temurun.
           </p>
           <p className="text-[#4B5563] text-base leading-relaxed mb-8">
-            Kureksari Blacksmith menggabungkan teknik tradisional yang telah teruji waktu dengan standar kualitas modern untuk memenuhi kebutuhan custom lainnya.
+            Kureksari Blacksmith menggabungkan teknik tradisional yang telah teruji waktu dengan standar kualitas modern untuk memenuhi kebutuhan sparepart industri dan custom lainnya.
           </p>
 
           <ul className="space-y-3 mb-10">

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Star, Send, CheckCircle, ChevronDown } from 'lucide-react'
 import { ALL_REVIEWS } from '../data/reviews.js'
@@ -47,20 +47,27 @@ function ReviewCard({ review, index }) {
   const inView = useInView(ref, { once: true, margin: '-40px' })
   const initials = review.name.split(' ').map((w) => w[0]).join('').substring(0, 2).toUpperCase()
   const color = PALETTE[index % PALETTE.length]
+  const [isCardMobile, setIsCardMobile] = useState(false)
+  useEffect(() => {
+    const update = () => setIsCardMobile(window.innerWidth < 640)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: isCardMobile ? 20 : 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: isCardMobile ? 0.4 : 0.6, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
       className="bg-white p-5 sm:p-6 md:p-7 border border-black/5 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col gap-3 sm:gap-4"
     >
       <div className="flex justify-between items-start">
         <StarRating value={review.rating} readonly />
         {review.verified && (
-          <span className="flex items-center gap-1 text-[9px] sm:text-[10px] text-green-600 font-medium tracking-wider">
-            <CheckCircle size={10} /> Verified
+          <span className="flex items-center gap-1 text-[11px] sm:text-[12px] text-green-600 font-medium tracking-wider">
+            <CheckCircle size={12} /> Verified
           </span>
         )}
       </div>
@@ -76,7 +83,7 @@ function ReviewCard({ review, index }) {
         </div>
         <div>
           <p className="text-[#0A0A0A] text-xs sm:text-sm font-medium leading-tight">{censorName(review.name)}</p>
-          <p className="text-[#6b6b6b] text-[10px] sm:text-xs mt-0.5">
+          <p className="text-[#6b6b6b] text-[11px] sm:text-xs mt-0.5">
             {review.city}
           </p>
         </div>
@@ -88,7 +95,7 @@ function ReviewCard({ review, index }) {
 function FormField({ label, children }) {
   return (
     <div className="flex flex-col gap-1.5 sm:gap-2">
-      <label className="text-white/45 text-[9px] sm:text-[10px] tracking-[0.18em] uppercase font-medium">{label}</label>
+      <label className="text-white/45 text-[11px] sm:text-[12px] tracking-[0.18em] uppercase font-medium">{label}</label>
       {children}
     </div>
   )
@@ -97,11 +104,21 @@ function FormField({ label, children }) {
 const inputClass = 'bg-white/6 border border-white/10 text-white placeholder:text-white/25 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none focus:border-[#C9A84C] transition-colors w-full'
 
 export default function Reviews() {
+  // Mobile-aware flag for responsive adjustments (640px breakpoint)
+  const [isMobile, setIsMobile] = useState(false)
   const [showCount, setShowCount] = useState(6)
   const [userReviews, setUserReviews] = useState([])
   const [form, setForm] = useState({ name: '', city: '', rating: 0, text: '' })
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+
+  // Mobile awareness: update on resize
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 640)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
 
   const allReviews = [...userReviews, ...ALL_REVIEWS]
   const visibleReviews = allReviews.slice(0, showCount)
@@ -144,14 +161,14 @@ export default function Reviews() {
               Kata <span className="italic text-[#D4520A]">Mereka</span>
             </h2>
           </div>
-          <div className="text-right">
+          <div className={`text-center md:text-right`}>
             <p className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[#D4520A] leading-none">{avgRating}</p>
-            <div className="flex justify-end gap-0.5 my-1.5">
+            <div className={`flex ${isMobile ? 'justify-center' : 'justify-end'} gap-1 my-1.5`}>
               {[1, 2, 3, 4, 5].map((s) => (
-                <Star key={s} size={12} className="sm:size-14 fill-[#C9A84C] text-[#C9A84C]" />
+                <Star key={s} size={isMobile ? 16 : 12} className="fill-[#C9A84C] text-[#C9A84C]" />
               ))}
             </div>
-            <p className="text-[#6b6b6b] text-[10px] sm:text-xs">{allReviews.length} ulasan pelanggan</p>
+            <p className="text-[#6b6b6b] text-[11px] sm:text-xs">{allReviews.length} ulasan pelanggan</p>
           </div>
         </motion.div>
 
@@ -237,7 +254,7 @@ export default function Reviews() {
               />
             </FormField>
 
-            {error && <p className="text-red-400 text-[10px] sm:text-xs">{error}</p>}
+            {error && <p className="text-red-400 text-[11px] sm:text-xs">{error}</p>}
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5 pt-1 sm:pt-2">
               <button
